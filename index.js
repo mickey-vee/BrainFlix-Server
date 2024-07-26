@@ -1,13 +1,16 @@
 import express from "express";
 import cors from "cors";
-import videoRouter from "./routes/video.js";
+import videoRoute from "./routes/VideoRoute.js";
+import "dotenv/config";
 
 const app = express();
-const port = 8080;
+const PORT = process.env.PORT || 5050;
 
 app.use(express.json());
 app.use(cors());
 
-app.use("/videos", videoRouter);
+app.use(express.static("public"));
 
-app.listen(port);
+app.use("/videos", videoRoute);
+
+app.listen(PORT);
