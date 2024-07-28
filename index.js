@@ -11,6 +11,6 @@ app.use(cors());
 
 app.use(express.static("public"));
 
-app.use("/videos", videoRoute);
+app.use("/video", videoRoute);
 
 app.listen(PORT);

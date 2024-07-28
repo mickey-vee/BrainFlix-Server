@@ -45,24 +45,25 @@ router.get("/:id", (req, res) => {
 // Post a new video
 router.post("/", (req, res) => {
   console.log("Request body:", req.body);
-  const { title, description } = req.body;
+  const { title, description, image } = req.body;
   const newVideo = {
     id: randomUUID(),
     title: title,
     channel: "Guest",
-    image: "http://localhost:8080/images/image0.jpg",
+    image: image,
     description: description,
-    likes: "",
+    views: "1000000",
+    likes: "1000000",
     duration: "12:26",
     video: "https://unit-3-project-api-0a5620414506.herokuapp.com/stream",
-    timestamp: "",
+    timestamp: 1701584262000,
     comments: [
       {
-        id: "",
-        Name: "",
-        comment: "",
-        likes: "",
-        timestamp: "",
+        id: randomUUID(),
+        name: "Michelle",
+        comment: "Wow! This looks amazing",
+        likes: "10000000",
+        timestamp: 1701584262000,
       },
     ],
   };
