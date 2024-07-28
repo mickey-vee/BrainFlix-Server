@@ -42,6 +42,10 @@ router.get("/:id", (req, res) => {
   res.status(404).send("Video ID doesn't exist");
 });
 
+// Get timestamp
+const today = new Date();
+const timestamp = today.getTime();
+
 // Post a new video
 router.post("/", (req, res) => {
   console.log("Request body:", req.body);
@@ -56,14 +60,14 @@ router.post("/", (req, res) => {
     likes: "1000000",
     duration: "12:26",
     video: "https://unit-3-project-api-0a5620414506.herokuapp.com/stream",
-    timestamp: 1701584262000,
+    timestamp: timestamp,
     comments: [
       {
         id: randomUUID(),
         name: "Michelle",
         comment: "Wow! This looks amazing",
         likes: "10000000",
-        timestamp: 1701584262000,
+        timestamp: timestamp,
       },
     ],
   };
